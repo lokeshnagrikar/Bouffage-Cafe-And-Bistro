@@ -14,8 +14,8 @@ import DynamicBookingCTA from "@/components/sections/DynamicBookingCTA";
 import TableReservationBanner from "@/components/sections/TableReservationBanner";
 import Footer from "@/components/layout/Footer";
 import ReservationModal from "@/components/modals/ReservationModal";
-import ThemeMoodToggle from "@/components/shared/ThemeMoodToggle";
 import CustomCursor from "@/components/shared/CustomCursor";
+import ScrollReveal from "@/components/shared/ScrollReveal";
 
 export default function Home() {
   const [reservationModalOpen, setReservationModalOpen] = useState(false);
@@ -41,7 +41,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-[#f4efea] text-espresso relative selection:bg-espresso selection:text-cream">
+    <main className="min-h-screen bg-[#f4efea] dark:bg-[#0d0e11] text-[#2b1b17] dark:text-[#f4efea] relative selection:bg-[#2b1b17] selection:text-[#f4efea] transition-colors duration-300">
       {/* Custom Physics Mouse Follower */}
       <CustomCursor />
 
@@ -55,37 +55,52 @@ export default function Home() {
       />
 
       {/* Ambiance & Spatial Experience Section */}
-      <AmbianceSection />
+      <ScrollReveal direction="up">
+        <AmbianceSection />
+      </ScrollReveal>
 
       {/* Signature Dishes Showcase Section */}
-      <SignatureDishesSection />
+      <ScrollReveal direction="up" delay={0.1}>
+        <SignatureDishesSection />
+      </ScrollReveal>
 
       {/* Interactive Gastronomy Matchmaker Quiz */}
-      <FoodConciergeSection />
+      <ScrollReveal direction="up" delay={0.1}>
+        <FoodConciergeSection />
+      </ScrollReveal>
 
       {/* Sensory Taste Profile Radar Section */}
-      <TasteProfileSection />
+      <ScrollReveal direction="up" delay={0.1}>
+        <TasteProfileSection />
+      </ScrollReveal>
 
       {/* Gastronomy Menu Matrix Section */}
-      <MenuMatrixSection />
+      <ScrollReveal direction="up" delay={0.1}>
+        <MenuMatrixSection />
+      </ScrollReveal>
 
       {/* Social Proof & Customer Reviews Section */}
-      <SocialProofSection />
+      <ScrollReveal direction="up" delay={0.1}>
+        <SocialProofSection />
+      </ScrollReveal>
 
       {/* Services & Dining Channels Section */}
-      <ServicesSection onReserveClick={handleOpenReservation} />
+      <ScrollReveal direction="up" delay={0.1}>
+        <ServicesSection onReserveClick={handleOpenReservation} />
+      </ScrollReveal>
 
       {/* Dynamic Real-Time Table Booking CTA Section */}
-      <DynamicBookingCTA />
+      <ScrollReveal direction="up" delay={0.1}>
+        <DynamicBookingCTA />
+      </ScrollReveal>
 
       {/* "Want to Reserve a Table?" Callout Banner */}
-      <TableReservationBanner onReserveClick={handleOpenReservation} />
+      <ScrollReveal direction="up" delay={0.1}>
+        <TableReservationBanner onReserveClick={handleOpenReservation} />
+      </ScrollReveal>
 
       {/* Global Footer & Shankar Nagar Location Anchor */}
       <Footer onReserveClick={handleOpenReservation} />
-
-      {/* Floating Dynamic Ambiance Mood Switcher */}
-      <ThemeMoodToggle />
 
       {/* Table Reservation 4-Step Booking Engine Drawer */}
       <ReservationModal

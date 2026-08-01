@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, MapPin, Coffee, UtensilsCrossed, ArrowRight, Sparkles, Calendar, Pizza, Flame, Cake } from "lucide-react";
 import Image from "next/image";
@@ -70,6 +70,15 @@ export default function HeroSection({ onReserveClick, onExploreMenuClick }: Hero
       image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=2400&q=90",
     },
   ];
+
+  // Automatic Background & Menu Slideshow Timer (Every 4.5 Seconds)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveCategory((prev) => (prev + 1) % heroCategoryShowcase.length);
+    }, 4500);
+
+    return () => clearInterval(timer);
+  }, [heroCategoryShowcase.length]);
 
   const currentItem = heroCategoryShowcase[activeCategory];
 
