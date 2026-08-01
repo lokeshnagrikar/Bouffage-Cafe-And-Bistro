@@ -5,13 +5,23 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ReservationModal from "@/components/modals/ReservationModal";
 import CustomCursor from "@/components/shared/CustomCursor";
-import { Calendar, User, ArrowRight, Sparkles, Tag, Coffee } from "lucide-react";
+import { Calendar, ArrowRight } from "lucide-react";
 import Image from "next/image";
+
+interface BlogPost {
+  id: string;
+  title: string;
+  category: string;
+  date: string;
+  author: string;
+  summary: string;
+  image: string;
+}
 
 export default function BlogPage() {
   const [reservationModalOpen, setReservationModalOpen] = useState(false);
 
-  const posts = [
+  const posts: BlogPost[] = [
     {
       id: "monsoon-coffee-fest",
       title: "Artisan Coffee Culture in Shankar Nagar: Monsoon Specialty Brews",
@@ -73,7 +83,7 @@ export default function BlogPage() {
                 <div className="relative h-48 w-full rounded-2xl overflow-hidden mb-5">
                   <Image
                     src={post.image}
-                    alt={post.title}
+                    alt={post.title || "Bouffage Cafe Blog Post"}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
