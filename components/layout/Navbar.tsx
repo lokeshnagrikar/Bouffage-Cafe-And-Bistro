@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Star, MapPin, Menu as MenuIcon, X, Calendar, Coffee, Sun, Moon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 interface NavbarProps {
   onReserveClick?: () => void;
@@ -41,11 +42,13 @@ export default function Navbar({ onReserveClick }: NavbarProps) {
   };
 
   const navLinks = [
-    { label: "Overview", href: "#hero" },
-    { label: "Ambiance", href: "#ambiance" },
-    { label: "Signatures", href: "#signatures" },
-    { label: "Menu", href: "#menu" },
-    { label: "Services", href: "#services" },
+    { label: "Overview", href: "/" },
+    { label: "Menu", href: "/menu" },
+    { label: "Ambiance", href: "/experience" },
+    { label: "Events", href: "/private-dining" },
+    { label: "Story", href: "/story" },
+    { label: "Gallery", href: "/gallery" },
+    { label: "Blog", href: "/blog" },
   ];
 
   return (
@@ -56,7 +59,7 @@ export default function Navbar({ onReserveClick }: NavbarProps) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Anchor */}
-        <a href="#hero" className="flex items-center gap-3 group">
+        <Link href="/" className="flex items-center gap-3 group">
           <div className="w-10 h-10 rounded-full bg-[#2b1b17] dark:bg-amber-500 text-[#f4efea] dark:text-[#0d0e11] flex items-center justify-center font-serif font-bold text-xl group-hover:scale-105 transition-transform shadow-md">
             <Coffee className="w-5 h-5 text-amber-400 dark:text-[#0d0e11]" />
           </div>
@@ -68,18 +71,18 @@ export default function Navbar({ onReserveClick }: NavbarProps) {
               Cafe & Bistro • Nagpur
             </span>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-8 bg-[#efe8df] dark:bg-[#16181d] border border-[#2b1b17]/10 dark:border-white/10 px-8 py-2.5 rounded-full shadow-sm">
+        <nav className="hidden lg:flex items-center gap-6 bg-[#efe8df] dark:bg-[#16181d] border border-[#2b1b17]/10 dark:border-white/10 px-6 py-2.5 rounded-full shadow-sm">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
               href={link.href}
-              className="text-xs font-mono font-medium text-[#2b1b17]/80 dark:text-[#f4efea]/80 hover:text-amber-800 dark:hover:text-amber-400 transition-colors uppercase tracking-wider"
+              className="text-xs font-mono font-medium text-[#2b1b17]/80 dark:text-[#f4efea]/80 hover:text-amber-800 dark:hover:text-amber-400 transition-colors uppercase tracking-wider whitespace-nowrap"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -108,7 +111,7 @@ export default function Navbar({ onReserveClick }: NavbarProps) {
           {/* Reserve CTA Button */}
           <button
             onClick={onReserveClick}
-            className="espresso-pill px-6 py-2.5 text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-2"
+            className="espresso-pill px-5 py-2.5 text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-2 whitespace-nowrap"
           >
             <Calendar className="w-3.5 h-3.5 text-amber-400 dark:text-[#0d0e11]" />
             <span>Book Table</span>
@@ -116,7 +119,7 @@ export default function Navbar({ onReserveClick }: NavbarProps) {
         </div>
 
         {/* Mobile Controls */}
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           {/* Mobile Theme Toggle Button */}
           <button
             type="button"
@@ -145,7 +148,7 @@ export default function Navbar({ onReserveClick }: NavbarProps) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#efe8df] dark:bg-[#16181d] border-t border-[#2b1b17]/10 dark:border-white/10 px-6 py-6 mt-3 shadow-xl text-[#2b1b17] dark:text-[#f4efea]"
+            className="lg:hidden bg-[#efe8df] dark:bg-[#16181d] border-t border-[#2b1b17]/10 dark:border-white/10 px-6 py-6 mt-3 shadow-xl text-[#2b1b17] dark:text-[#f4efea]"
           >
             <div className="flex flex-col gap-4">
               <div className="flex items-center justify-between pb-3 border-b border-[#2b1b17]/10 dark:border-white/10">
@@ -160,14 +163,14 @@ export default function Navbar({ onReserveClick }: NavbarProps) {
               </div>
 
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className="text-base font-serif font-bold text-[#2b1b17] dark:text-[#f4efea] hover:text-amber-600 py-1 transition-colors"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
 
               <button

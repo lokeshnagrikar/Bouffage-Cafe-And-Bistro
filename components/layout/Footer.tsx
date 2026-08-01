@@ -1,6 +1,7 @@
 "use client";
 
-import { Star, MapPin, Phone, Clock, ArrowUp, Calendar, Coffee, ShieldCheck, Instagram, Facebook, Twitter, Youtube } from "lucide-react";
+import { Star, MapPin, Phone, Clock, ArrowUp, Calendar, Coffee, ShieldCheck, Instagram, Facebook, Twitter } from "lucide-react";
+import Link from "next/link";
 
 interface FooterProps {
   onReserveClick?: () => void;
@@ -15,8 +16,6 @@ export default function Footer({ onReserveClick }: FooterProps) {
     { name: "Instagram", icon: Instagram, handle: "@bouffagecafenagpur" },
     { name: "Facebook", icon: Facebook, handle: "Bouffage Cafe Bistro" },
     { name: "Twitter / X", icon: Twitter, handle: "@bouffage_nagpur" },
-    // { name: "YouTube", icon: Youtube, handle: "Bouffage Cafe Channel" },
-    // { name: "Google Reviews", icon: Star, handle: "4.2 ★ (3,244 Reviews)" },
   ];
 
   return (
@@ -110,28 +109,28 @@ export default function Footer({ onReserveClick }: FooterProps) {
           <div className="lg:col-span-3 grid grid-cols-2 gap-6 text-xs font-mono">
             <div>
               <h4 className="font-mono font-bold text-xs text-amber-800 dark:text-amber-400 uppercase tracking-widest mb-4">
-                Services
+                Navigation
               </h4>
               <ul className="space-y-2.5 text-[#2b1b17]/80 dark:text-[#f4efea]/80">
-                <li><a href="#hero" className="hover:text-amber-800 dark:hover:text-amber-400 transition-colors">Dine In</a></li>
-                <li><a href="#ambiance" className="hover:text-amber-800 dark:hover:text-amber-400 transition-colors">Takeaway</a></li>
-                <li><a href="#signatures" className="hover:text-amber-800 dark:hover:text-amber-400 transition-colors">Delivery</a></li>
-                <li><a href="#menu" className="hover:text-amber-800 dark:hover:text-amber-400 transition-colors">Coffee Bar</a></li>
-                <li><a href="#services" className="hover:text-amber-800 dark:hover:text-amber-400 transition-colors">Desserts</a></li>
+                <li><Link href="/" className="hover:text-amber-800 dark:hover:text-amber-400 transition-colors">Overview</Link></li>
+                <li><Link href="/menu" className="hover:text-amber-800 dark:hover:text-amber-400 transition-colors">Menu</Link></li>
+                <li><Link href="/experience" className="hover:text-amber-800 dark:hover:text-amber-400 transition-colors">Ambiance</Link></li>
+                <li><Link href="/signatures" className="hover:text-amber-800 dark:hover:text-amber-400 transition-colors">Signatures</Link></li>
+                <li><Link href="/services" className="hover:text-amber-800 dark:hover:text-amber-400 transition-colors">Services</Link></li>
+                <li><Link href="/contact" className="hover:text-amber-800 dark:hover:text-amber-400 transition-colors">Contact</Link></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-mono font-bold text-xs text-amber-800 dark:text-amber-400 uppercase tracking-widest mb-4">
-                Cuisines
+                Luxury Tier
               </h4>
               <ul className="space-y-2.5 text-[#2b1b17]/80 dark:text-[#f4efea]/80">
-                <li>Indian</li>
-                <li>Italian</li>
-                <li>Continental</li>
-                <li>Cafe</li>
-                <li>Coffee</li>
-                <li>Desserts</li>
+                <li><Link href="/private-dining" className="hover:text-amber-800 dark:hover:text-amber-400 transition-colors font-bold text-amber-800 dark:text-amber-400">Private Events</Link></li>
+                <li><Link href="/story" className="hover:text-amber-800 dark:hover:text-amber-400 transition-colors">Our Story</Link></li>
+                <li><Link href="/gallery" className="hover:text-amber-800 dark:hover:text-amber-400 transition-colors">Visual Gallery</Link></li>
+                <li><Link href="/blog" className="hover:text-amber-800 dark:hover:text-amber-400 transition-colors">Culinary Stories</Link></li>
+                <li><Link href="/faq" className="hover:text-amber-800 dark:hover:text-amber-400 transition-colors">Guest FAQ</Link></li>
               </ul>
             </div>
           </div>
@@ -166,8 +165,8 @@ export default function Footer({ onReserveClick }: FooterProps) {
               </div>
             </div>
 
-            <div className="pt-3 border-t border-[#2b1b17]/10 dark:border-white/10 text-[11px] font-mono text-sage-dark dark:text-sage font-bold">
-              Dine In • Takeaway • Delivery
+            <div className="pt-3 border-t border-[#2b1b17]/10 dark:border-white/10 text-[11px] font-mono text-amber-800 dark:text-amber-400 font-bold">
+              Tier 4 Luxury Signature Concept
             </div>
           </div>
 
@@ -176,7 +175,7 @@ export default function Footer({ onReserveClick }: FooterProps) {
         {/* Copyright Notice */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#2b1b17]/60 dark:text-[#f4efea]/60">
           <div>
-            © Bouffage Cafe & Bistro, Shankar Nagar, Nagpur. Demo Proposal Version.
+            © Bouffage Cafe & Bistro, Shankar Nagar, Nagpur. Tier 4 Luxury Signature Prototype.
           </div>
 
           <div className="flex items-center gap-1.5 text-amber-800 dark:text-amber-400 font-bold">
