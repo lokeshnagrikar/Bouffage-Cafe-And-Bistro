@@ -1,0 +1,187 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f4efea;
+  --foreground: #2b1b17;
+  --card-bg: #efe8df;
+  --card-border: rgba(43, 27, 23, 0.12);
+}
+
+.dark {
+  --background: #0d0e11;
+  --foreground: #f4efea;
+  --card-bg: #16181d;
+  --card-border: rgba(255, 255, 255, 0.12);
+}
+
+html, body {
+  color: var(--foreground);
+  background-color: var(--background);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Animated Gradient Text Effect */
+.animate-gradient-text {
+  background: linear-gradient(
+    90deg,
+    #b87f18 0%,
+    #d99b26 25%,
+    #c86d3b 50%,
+    #e5a93b 75%,
+    #b87f18 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s linear infinite;
+}
+
+.dark .animate-gradient-text {
+  background: linear-gradient(
+    90deg,
+    #fbbf24 0%,
+    #f59e0b 25%,
+    #f97316 50%,
+    #fbbf24 75%,
+    #f59e0b 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s linear infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Animated Glow Pulse */
+.animate-pulse-slow {
+  animation: pulseSlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulseSlow {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.15) translate(10px, -10px);
+    opacity: 0.7;
+  }
+}
+
+/* Global Dark Mode High-Contrast Overrides */
+.dark body,
+.dark main,
+.dark section {
+  background-color: #0d0e11 !important;
+  color: #f4efea !important;
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: #f4efea !important;
+}
+
+.dark p {
+  color: rgba(244, 239, 234, 0.85) !important;
+}
+
+.dark .cream-card,
+.dark [class*="bg-[#efe8df]"] {
+  background-color: #16181d !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #f4efea !important;
+}
+
+.dark [class*="bg-[#f4efea]"] {
+  background-color: #0d0e11 !important;
+}
+
+.dark [class*="text-[#2b1b17]"],
+.dark [class*="text-espresso"] {
+  color: #f4efea !important;
+}
+
+.dark [class*="text-amber-800"] {
+  color: #fbbf24 !important;
+}
+
+.dark [class*="text-amber-700"] {
+  color: #f59e0b !important;
+}
+
+.dark [class*="bg-[#2b1b17]"],
+.dark [class*="bg-espresso"] {
+  background-color: #d99b26 !important;
+  color: #0d0e11 !important;
+}
+
+/* Base Utility Classes */
+.espresso-pill {
+  background-color: #2b1b17;
+  color: #f4efea;
+  border-radius: 9999px;
+  box-shadow: 0 10px 30px rgba(43, 27, 23, 0.25);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark .espresso-pill {
+  background-color: #d99b26 !important;
+  color: #0d0e11 !important;
+  box-shadow: 0 10px 30px rgba(217, 155, 38, 0.3) !important;
+}
+
+.espresso-pill:hover {
+  transform: translateY(-2px);
+}
+
+.cream-card {
+  background-color: #efe8df;
+  border: 1px solid rgba(43, 27, 23, 0.12);
+  border-radius: 2rem;
+  box-shadow: 0 10px 30px rgba(43, 27, 23, 0.06);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4efea;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0d0e11;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbbba8;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #2b2d35;
+}
