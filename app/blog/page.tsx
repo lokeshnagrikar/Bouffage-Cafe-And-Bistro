@@ -32,7 +32,7 @@ export default function BlogPage() {
     },
     {
       id: "authentic-italian-pizza",
-      name: "Stone-Baked Italian Pizza: Passata, Mozzarella & Oregano Secrets",
+      title: "Stone-Baked Italian Pizza: Passata, Mozzarella & Oregano Secrets",
       category: "Italian Cuisine",
       date: "June 2026",
       author: "Italian Kitchen Lead",
