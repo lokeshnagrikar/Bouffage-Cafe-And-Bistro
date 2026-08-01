@@ -27,9 +27,15 @@ module.exports = {
           light: "#21242C",
         },
         amber: {
-          DEFAULT: "#D99B26",
-          dark: "#B87F18",
-          glow: "rgba(217, 155, 38, 0.3)",
+          DEFAULT: "#FF4D00",
+          dark: "#E03E00",
+          glow: "rgba(255, 77, 0, 0.35)",
+          400: "#FF6B26",
+          500: "#FF4D00",
+          600: "#E03E00",
+          700: "#C43600",
+          800: "#A82E00",
+          900: "#8C2600",
         },
         sage: {
           DEFAULT: "#8A9A86",
@@ -46,7 +52,7 @@ module.exports = {
       boxShadow: {
         espresso: "0 20px 40px -15px rgba(43, 27, 23, 0.3)",
         pill: "0 8px 25px rgba(43, 27, 23, 0.2)",
-        amber: "0 0 30px rgba(217, 155, 38, 0.25)",
+        amber: "0 0 30px rgba(255, 77, 0, 0.35)",
         card: "0 16px 40px rgba(0, 0, 0, 0.5)",
       },
       borderRadius: {
