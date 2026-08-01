@@ -26,22 +26,22 @@ export default function ThemeMoodToggle() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-[9999] pointer-events-auto">
+    <div className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-[9999] pointer-events-auto">
       <button
         type="button"
         onClick={toggleMood}
-        className="flex items-center gap-2.5 px-5 py-3 rounded-full bg-espresso text-cream border border-amber-500/40 text-xs font-mono font-bold shadow-2xl hover:scale-105 active:scale-95 transition-all cursor-pointer select-none"
+        className="w-12 h-12 sm:w-auto sm:h-auto flex items-center justify-center gap-2.5 sm:px-5 sm:py-3 rounded-full bg-[#2b1b17] dark:bg-amber-500 text-[#f4efea] dark:text-[#0d0e11] border border-amber-500/40 text-xs font-mono font-bold shadow-2xl hover:scale-105 active:scale-95 transition-all cursor-pointer select-none"
         title="Toggle Ambiance Lighting Mode (Nocturnal Bistro vs Daylight Cafe)"
       >
         {isDark ? (
           <>
-            <Sun className="w-4 h-4 text-amber-400 animate-spin-slow" />
-            <span className="text-amber-400">Daylight Cafe Mode</span>
+            <Sun className="w-5 h-5 sm:w-4 sm:h-4 text-amber-400 dark:text-[#0d0e11] animate-spin-slow" />
+            <span className="hidden sm:inline text-amber-400 dark:text-[#0d0e11]">Daylight Cafe Mode</span>
           </>
         ) : (
           <>
-            <Moon className="w-4 h-4 text-amber-400" />
-            <span className="text-cream">Nocturnal Bistro Mood</span>
+            <Moon className="w-5 h-5 sm:w-4 sm:h-4 text-amber-400 dark:text-[#0d0e11]" />
+            <span className="hidden sm:inline text-cream dark:text-[#0d0e11]">Nocturnal Bistro Mood</span>
           </>
         )}
       </button>

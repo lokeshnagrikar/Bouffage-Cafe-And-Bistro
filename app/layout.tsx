@@ -1,23 +1,28 @@
 import type { Metadata } from "next";
-import { Inter, Outfit, Cinzel, Space_Mono } from "next/font/google";
+import { Cormorant_Garamond, Plus_Jakarta_Sans, Playfair_Display, Space_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 
-const inter = Inter({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
   display: "swap",
 });
 
-const outfit = Outfit({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  weight: ["400", "600", "700", "800"],
+  style: ["normal", "italic"],
+  variable: "--font-playfair",
   display: "swap",
 });
 
-const cinzel = Cinzel({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-cinzel",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-jakarta",
   display: "swap",
 });
 
@@ -42,7 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${outfit.variable} ${cinzel.variable} ${spaceMono.variable} bg-[#f4efea] text-[#2b1b17] antialiased selection:bg-amber-500 selection:text-obsidian`}
+        className={`${cormorant.variable} ${playfair.variable} ${jakarta.variable} ${spaceMono.variable} font-sans bg-[#f4efea] text-[#2b1b17] antialiased selection:bg-amber-500 selection:text-obsidian`}
       >
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>

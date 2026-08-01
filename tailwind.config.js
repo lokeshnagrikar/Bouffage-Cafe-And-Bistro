@@ -37,9 +37,10 @@ module.exports = {
         },
       },
       fontFamily: {
-        serif: ["var(--font-cinzel)", "serif"],
-        display: ["var(--font-outfit)", "sans-serif"],
-        body: ["var(--font-inter)", "sans-serif"],
+        serif: ["var(--font-cormorant)", "var(--font-playfair)", "serif"],
+        display: ["var(--font-playfair)", "serif"],
+        sans: ["var(--font-jakarta)", "sans-serif"],
+        body: ["var(--font-jakarta)", "sans-serif"],
         mono: ["var(--font-space-mono)", "monospace"],
       },
       boxShadow: {
