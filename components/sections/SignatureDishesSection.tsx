@@ -92,7 +92,13 @@ export default function SignatureDishesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 sm:mb-20 gap-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col md:flex-row md:items-end justify-between mb-16 sm:mb-20 gap-6"
+        >
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f4efea] dark:bg-white/10 border border-[#2b1b17]/10 dark:border-white/20 text-[#2b1b17] dark:text-[#f4efea] text-xs font-mono uppercase tracking-widest mb-3 shadow-xs">
               <Sparkles className="w-3.5 h-3.5 text-amber-700 dark:text-amber-400" />
@@ -126,7 +132,7 @@ export default function SignatureDishesSection() {
               </button>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Floating Top-Down Circular Cutout Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-8 pt-10">
@@ -134,8 +140,9 @@ export default function SignatureDishesSection() {
             <motion.div
               key={dish.id}
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
               onClick={() => setSelectedDish(dish)}
               className="bg-[#f4efea] dark:bg-[#16181d] border border-[#2b1b17]/12 dark:border-white/10 rounded-[2rem] p-6 sm:p-8 pt-20 relative flex flex-col justify-between cursor-pointer group hover:shadow-2xl transition-all"
             >

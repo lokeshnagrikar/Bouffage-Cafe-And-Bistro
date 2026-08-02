@@ -175,7 +175,7 @@ export default function Footer({ onReserveClick }: FooterProps) {
         {/* Copyright & Legal Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#2b1b17]/60 dark:text-[#f4efea]/60">
           <div>
-            © {new Date().getFullYear()} Bouffage Cafe & Bistro, Shankar Nagar, Nagpur. All rights reserved.
+            © 2026 Bouffage Cafe & Bistro, Shankar Nagar, Nagpur. All rights reserved.
           </div>
 
           <div className="flex items-center gap-4">

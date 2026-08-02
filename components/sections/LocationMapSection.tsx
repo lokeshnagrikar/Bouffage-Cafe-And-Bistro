@@ -15,8 +15,14 @@ export default function LocationMapSection() {
     <section id="location-map" className="py-20 sm:py-24 relative overflow-hidden bg-[#efe8df] dark:bg-[#0d0e11] border-t border-[#2b1b17]/10 dark:border-white/10 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        {/* Section Header (Scroll-Triggered Fade-Up) */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12 sm:mb-16"
+        >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#f4efea] dark:bg-white/10 border border-[#2b1b17]/10 dark:border-white/20 text-[#2b1b17] dark:text-[#f4efea] text-xs font-mono uppercase tracking-widest mb-3 shadow-xs">
             <Compass className="w-4 h-4 text-amber-700 dark:text-amber-400" />
             <span>Official Google Maps Location</span>
@@ -29,13 +35,19 @@ export default function LocationMapSection() {
           <p className="text-base text-[#2b1b17]/80 dark:text-[#f4efea]/80 font-light leading-relaxed">
             Conveniently situated at Sanskrutik Sankul Complex, Ambazari Road, opposite Wockhardt Hospitals in Shankar Nagar. Stop by for artisan coffee, sizzlers, or stone-baked pizza!
           </p>
-        </div>
+        </motion.div>
 
         {/* Map & Location Card Split Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
           {/* Left Google Maps Embed Window */}
-          <div className="lg:col-span-7 h-[400px] sm:h-[480px] rounded-[2.5rem] overflow-hidden border border-[#2b1b17]/15 dark:border-white/15 shadow-2xl relative">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-7 h-[400px] sm:h-[480px] rounded-[2.5rem] overflow-hidden border border-[#2b1b17]/15 dark:border-white/15 shadow-2xl relative"
+          >
             <iframe
               title="Bouffage Cafe And Bistro Shankar Nagar Official Location Map"
               src={googleMapsUrl}
@@ -51,10 +63,16 @@ export default function LocationMapSection() {
               <MapPin className="w-3.5 h-3.5 text-amber-400 dark:text-[#0d0e11]" />
               <span>Bouffage Cafe And Bistro</span>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Venue Details & Navigation Card */}
-          <div className="lg:col-span-5 bg-[#f4efea] dark:bg-[#16181d] border border-[#2b1b17]/12 dark:border-white/10 rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between shadow-2xl text-[#2b1b17] dark:text-[#f4efea]">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="lg:col-span-5 bg-[#f4efea] dark:bg-[#16181d] border border-[#2b1b17]/12 dark:border-white/10 rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between shadow-2xl text-[#2b1b17] dark:text-[#f4efea]"
+          >
             <div>
               <div className="flex items-center justify-between pb-4 border-b border-[#2b1b17]/10 dark:border-white/10 mb-6">
                 <div>
@@ -123,7 +141,7 @@ export default function LocationMapSection() {
                 <ExternalLink className="w-3.5 h-3.5 opacity-70" />
               </a>
             </div>
-          </div>
+          </motion.div>
 
         </div>
 

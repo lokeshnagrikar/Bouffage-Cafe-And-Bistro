@@ -13,6 +13,7 @@ import Footer from "@/components/layout/Footer";
 import ReservationModal from "@/components/modals/ReservationModal";
 import CustomCursor from "@/components/shared/CustomCursor";
 import ScrollReveal from "@/components/shared/ScrollReveal";
+import Preloader from "@/components/shared/Preloader";
 
 export default function Home() {
   const [reservationModalOpen, setReservationModalOpen] = useState(false);
@@ -39,45 +40,48 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#f4efea] dark:bg-[#0d0e11] text-[#2b1b17] dark:text-[#f4efea] relative selection:bg-[#2b1b17] selection:text-[#f4efea] transition-colors duration-300">
+      {/* Initial Page Preloader */}
+      <Preloader />
+
       {/* Custom Physics Mouse Follower */}
       <CustomCursor />
 
       {/* Global Navigation Bar */}
       <Navbar onReserveClick={handleOpenReservation} />
 
-      {/* 1. Hero Section (Overview & Automatic Slideshow) */}
+      {/* 1. Hero Section (Overview & Automatic 4.5s Slideshow) */}
       <HeroSection
         onReserveClick={handleOpenReservation}
         onExploreMenuClick={handleExploreMenu}
       />
 
-      {/* 2. Signature Dishes Showcase Section */}
-      <ScrollReveal direction="up">
+      {/* 2. Signature Dishes Showcase Section (Scroll-Triggered Fade-Up with 200ms Stagger) */}
+      <ScrollReveal delay={0.2} staggerChildren={0.2}>
         <SignatureDishesSection />
       </ScrollReveal>
 
-      {/* 3. Ambiance & Spatial Experience Section */}
-      <ScrollReveal direction="up" delay={0.1}>
+      {/* 3. Ambiance & Spatial Experience Section (Scroll-Triggered Fade-Up) */}
+      <ScrollReveal delay={0.2} staggerChildren={0.2}>
         <AmbianceSection />
       </ScrollReveal>
 
-      {/* 4. Social Proof & Customer Reviews Section */}
-      <ScrollReveal direction="up" delay={0.1}>
+      {/* 4. Social Proof & Customer Reviews Section (Scroll-Triggered Fade-Up) */}
+      <ScrollReveal delay={0.2} staggerChildren={0.2}>
         <SocialProofSection />
       </ScrollReveal>
 
       {/* 5. Dynamic Real-Time Table Booking CTA Section */}
-      <ScrollReveal direction="up" delay={0.1}>
+      <ScrollReveal delay={0.2} staggerChildren={0.2}>
         <DynamicBookingCTA />
       </ScrollReveal>
 
       {/* 6. Interactive Google Maps Location Section */}
-      <ScrollReveal direction="up" delay={0.1}>
+      <ScrollReveal delay={0.2} staggerChildren={0.2}>
         <LocationMapSection />
       </ScrollReveal>
 
       {/* 7. "Want to Reserve a Table?" Callout Banner */}
-      <ScrollReveal direction="up" delay={0.1}>
+      <ScrollReveal delay={0.2} staggerChildren={0.2}>
         <TableReservationBanner onReserveClick={handleOpenReservation} />
       </ScrollReveal>
 
