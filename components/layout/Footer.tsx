@@ -1,6 +1,6 @@
 "use client";
 
-import { Star, MapPin, Phone, Clock, ArrowUp, Calendar, Coffee, ShieldCheck, Instagram, Facebook, Twitter } from "lucide-react";
+import { Star, MapPin, Phone, Clock, ArrowUp, Calendar, Coffee, Instagram, Facebook, Twitter } from "lucide-react";
 import Link from "next/link";
 
 interface FooterProps {
@@ -46,7 +46,7 @@ export default function Footer({ onReserveClick }: FooterProps) {
                 A premier culinary sanctuary in Nagpur. Featuring authentic Indian, Italian, Continental dining, Peri Peri Fries, Sizzlers, Red Thai Curry, Butter Rice, and Artisan Coffee.
               </p>
 
-              {/* Social Media Demo Strip */}
+              {/* Social Media Strip */}
               <div className="mb-6">
                 <span className="text-[10px] font-mono uppercase tracking-widest text-[#2b1b17]/60 dark:text-[#f4efea]/60 font-bold block mb-3">
                   Connect On Social Media
@@ -59,10 +59,10 @@ export default function Footer({ onReserveClick }: FooterProps) {
                         key={item.name}
                         onClick={(e) => {
                           e.preventDefault();
-                          alert(`${item.name} Demo link: ${item.handle}`);
+                          alert(`${item.name}: ${item.handle}`);
                         }}
                         className="w-10 h-10 rounded-full bg-[#f4efea] dark:bg-white/10 border border-[#2b1b17]/10 dark:border-white/10 flex items-center justify-center text-[#2b1b17] dark:text-[#f4efea] hover:bg-[#2b1b17] hover:text-[#f4efea] dark:hover:bg-amber-500 dark:hover:text-[#0d0e11] transition-all cursor-pointer shadow-xs"
-                        title={`${item.name}: ${item.handle} (Demo)`}
+                        title={`${item.name}: ${item.handle}`}
                       >
                         <Icon className="w-4 h-4" />
                       </button>
@@ -123,7 +123,7 @@ export default function Footer({ onReserveClick }: FooterProps) {
 
             <div>
               <h4 className="font-mono font-bold text-xs text-amber-800 dark:text-amber-400 uppercase tracking-widest mb-4">
-                Luxury Tier
+                Experience
               </h4>
               <ul className="space-y-2.5 text-[#2b1b17]/80 dark:text-[#f4efea]/80">
                 <li><Link href="/private-dining" className="hover:text-amber-800 dark:hover:text-amber-400 transition-colors font-bold text-amber-800 dark:text-amber-400">Private Events</Link></li>
@@ -166,21 +166,22 @@ export default function Footer({ onReserveClick }: FooterProps) {
             </div>
 
             <div className="pt-3 border-t border-[#2b1b17]/10 dark:border-white/10 text-[11px] font-mono text-amber-800 dark:text-amber-400 font-bold">
-              Tier 4 Luxury Signature Concept
+              Bouffage Cafe & Bistro • Shankar Nagar
             </div>
           </div>
 
         </div>
 
-        {/* Copyright Notice */}
+        {/* Copyright & Legal Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#2b1b17]/60 dark:text-[#f4efea]/60">
           <div>
-            © Bouffage Cafe & Bistro, Shankar Nagar, Nagpur. Tier 4 Luxury Signature Prototype.
+            © {new Date().getFullYear()} Bouffage Cafe & Bistro, Shankar Nagar, Nagpur. All rights reserved.
           </div>
 
-          <div className="flex items-center gap-1.5 text-amber-800 dark:text-amber-400 font-bold">
-            <ShieldCheck className="w-4 h-4 text-amber-700 dark:text-amber-400" />
-            <span>Interactive Concept Prototype</span>
+          <div className="flex items-center gap-4">
+            <span className="hover:text-amber-800 dark:hover:text-amber-400 transition-colors cursor-pointer">Privacy Policy</span>
+            <span>•</span>
+            <span className="hover:text-amber-800 dark:hover:text-amber-400 transition-colors cursor-pointer">Terms of Service</span>
           </div>
         </div>
 
